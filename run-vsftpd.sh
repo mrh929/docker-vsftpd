@@ -22,7 +22,9 @@ mkdir -p "/home/vsftpd/${FTP_USER}"
 
 if [ "$CHMOD_DIRECTORY" = "YES" ]; then
 	# If you are using rclone, you can skip this command:
+	echo "chmod ftp directory ..."
 	chown -R ftp:ftp /home/vsftpd/
+	echo "chmod finished ..."
 fi
 
 echo -e "${FTP_USER}\n${FTP_PASS}" > /etc/vsftpd/virtual_users.txt
